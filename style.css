@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('https://i.ibb.co/2s7ZVdX/heart-bg.png') center/cover no-repeat;
+  opacity: 0.15;
+  z-index: 0;
+  animation: floatHearts 15s linear infinite;
+}
+
+/* Floating heart animation for background */
+@keyframes floatHearts {
+  0% { background-position: 0 0; }
+  100% { background-position: 200px 200px; }
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  padding: 50px 30px;
+  border-radius: 20px;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px #ff5e62, 0 0 20px #ff85a2;
+}
+
+.buttons button {
+  font-size: 1.2rem;
+  padding: 15px 45px;
+  margin: 15px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+  position: relative;
+}
+
+/* Yes button animation and style */
+#yes {
+  background: linear-gradient(45deg, #ff6b81, #ff85a2);
+  box-shadow: 0 0 15px #ff6b81, 0 0 30px #ff85a2;
+  animation: floatYes 3s ease-in-out infinite;
+}
+
+#yes:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 25px #ff4d6d, 0 0 50px #ff85a2;
+}
+
+/* Floating animation */
+@keyframes floatYes {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* No button style */
+#no {
+  background: linear-gradient(45deg, #f5a623, #f7d794);
+  box-shadow: 0 0 15px #f5a623, 0 0 30px #f7d794;
+}
+
+/* Final message style */
+.final-message {
+  margin-top: 30px;
+  animation: pop 0.7s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes pop {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
